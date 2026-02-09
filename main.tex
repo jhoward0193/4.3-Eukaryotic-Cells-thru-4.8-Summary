@@ -1,0 +1,79 @@
+\documentclass[9pt]{article}
+
+% ===== Shared settings =====
+\usepackage[letterpaper,margin=0.60in]{geometry}
+\renewcommand\normalsize{%
+  \fontsize{9}{11}\selectfont
+}
+\usepackage{parskip,microtype,booktabs,enumitem,graphicx}
+
+\usepackage[dvipsnames]{xcolor}
+\usepackage{titlesec}
+\usepackage{iftex}
+\usepackage{wrapfig}
+\usepackage{parskip}
+\usepackage{graphicx}
+\usepackage{multicol}
+\setlength{\columnsep}{0.5cm}
+
+\setlist[itemize]{noitemsep, topsep=2pt}
+\setlist[enumerate]{noitemsep, topsep=2pt}
+
+
+
+\ifPDFTeX
+  \usepackage[sfdefault]{carlito}
+\else
+  \usepackage{fontspec}
+  \setmainfont{Georgia}
+\fi
+\usepackage{fancyhdr,lastpage}
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=DeepBlue,
+  urlcolor=DeepBlue,
+  pdfborder={0 0 0}
+}
+
+% ===== Colors =====
+\definecolor{DeepBlue}{RGB}{0,40,90}
+\definecolor{AccentGray}{gray}{0.25}
+
+% ===== Headings =====
+\titleformat{\section}{\Large\bfseries\color{DeepBlue}\raggedright}{}{0pt}{}
+\titleformat{\subsection}{\normalsize\bfseries\color{DeepBlue}}{}{0pt}{}
+\titlespacing*{\section}{0pt}{1.0em plus 0.2em minus 0.2em}{0.6em}
+\titlespacing*{\subsection}{0pt}{0.8em plus 0.1em minus 0.1em}{0.4em}
+
+% ===== Header/Footer and Metadata Macros =====
+\newcommand{\CourseInfo}[2]{%
+  \fancyhead[L]{\textbf{}}%
+  \fancyhead[R]{\textbf{}}%
+}
+
+\newcommand{\StudyTitle}[1]{%
+  {\LARGE\bfseries\color{DeepBlue} #1}\par\vspace{0.4em}\hrule\vspace{1em}
+}
+
+% ===== Footer =====
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[C]{\textcolor{DeepBlue}{BIO 150 · Eukaryotic Cells (ch. 4.3-4.8) Page \thepage\ of \pageref{LastPage}}}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+% ===== Document Info =====
+
+
+
+\begin{document}
+
+\input{4.3_eukaryotic_cells}
+
+\input{4.4_endomembrane}
+\input{4.5_Mitochondria_Chloroplasts}
+\input{4.6_cytoskeleton}
+\input{4.7_extracellular_movement}
+\input{4.8_cell_to_cell_communication}
+\end{document}
